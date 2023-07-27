@@ -8,4 +8,5 @@ import Start#to start app necessary functions
 
 #Graphic Interface tests
 UI.wxTk()#Test Function 1
-UI.wxCTk()#Test Function 1
+UI.wxCTk()#Test Function 2
+UI.dynamic_wxCTK()#Test Function 3
