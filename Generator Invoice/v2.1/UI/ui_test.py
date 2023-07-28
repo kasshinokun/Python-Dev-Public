@@ -3,7 +3,23 @@ import customtkinter
 
 from tkinter import *
 from customtkinter import *
-
+#test class
+class Parent():
+      
+    def show(self):
+        print("Inside Parent")
+          
+class Child(Parent):
+      
+    def show(self):
+          
+        
+        
+        super().show()
+        print("Inside Child")
+def test_class_parent_child():          
+    obj = Child()
+    obj.show()
 class FirstWindow(Toplevel):
     def __init__(self, master=None):
         Toplevel.__init__(self, master=master)
@@ -67,3 +83,4 @@ class MainWindow(Frame):
 if __name__ == '__main__':
     mainWindow = MainWindow()
     mainWindow.mainloop() 
+#test_class_parent_child()# call test class 
