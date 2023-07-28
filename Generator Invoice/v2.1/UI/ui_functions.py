@@ -1,56 +1,83 @@
 # Graphic Interface Subprogram
-#Define and declare library 
-import customtkinter as wx_ctk
-import tkinter as wx_tk
+#Declare import libraries
+import tkinter
+import customtkinter
 import sys
+import Functions
 
-#Set import from library 
-from wx_ctk import *
-from wx_tk import *
+#Set import from libraries
+from customtkinter import *
+from tkinter import *
+from tkinter import messagebox
+from Functions import *
+from .ui_Interface import *
 
+#Define variables to libraries
+wx_tk=tkinter
+wx_ctk=customtkinter
 
+def showMsg():
+    messagebox.showinfo('Message', 'You clicked the Submit button!')
 #Create buttons and set window based on string array
 def button_wxTk(my_button,Tk):
     # set title window
     Tk.title("Tkinter Window")
     #variables
-    k = 1
     m=50
     n=20
     #set values dimensions
-    wxheight = (len(my_button) + k) * m#height
+    wxheight = int(len(my_button)/2 * m) #height
+    wxheight+=m
     wxwidth = wxheight + n#width
     #set dimension window
-    Tk.geometry(str(wxheight) + "x" + str(wxheight+m))
-    # set minimum dimensions based on string array
+    Tk.geometry(str(wxwidth) + "x" + str(wxheight))
+    # set minimum dimensions based on string array and functions
     Tk.minsize(wxwidth, wxheight)
     # set maximum dimensions based on screen computer
     Tk.maxsize(Tk.winfo_screenwidth(), Tk.winfo_screenheight())
     # Create buttons
-    for button in my_button:
-        wxbtn=wx_tk.Button(Tk,text=button).place(x=m, y=m*k)
-        k+=1
+    k = 0
+    for i in range(len(my_button)):
+        if i % 2 == 0:
+            wxbtn = wx_tk.Button(Tk,
+                                 text=my_button[i],
+                                 command=my_button[i + 1])
+            wxbtn.place(x=n, y=n + (m * k))
+            k += 1
+
 #Create buttons and set window based on string array
 def button_wxCTk(my_button,CTk):
+
     # set title window
     CTk.title("CustomTkinter Window")
+
     # variables
-    k = 1
     m=50
     n=20
+
     # set values dimensions
-    wxheight = (len(my_button) + k) * m# height
-    wxwidth = wxheight+n# width
+    wxheight = (len(my_button) + 1) * (m / 2)  # height
+    wxheight += m
+    wxwidth = wxheight + n  # width
     # set dimension window
-    CTk.geometry(str(wxwidth) + "x" + str(wxheight+m))
-    # set minimum dimensions based on string array
+    CTk.geometry(str(wxwidth) + "x" + str(wxheight))
+    # set minimum dimensions based on string array and functions
     CTk.minsize(wxwidth, wxheight)
+
     # set maximum dimensions based on screen computer
     CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
+    #array of functions
+
     #Create buttons
-    for button in my_button:
-        wxbtn=wx_ctk.CTkButton(CTk,text=button).place(x=m, y=m*k)
-        k+=1
+    k=0
+    for i in range(len(my_button)):
+        if i%2==0:
+            wxbtn = wx_ctk.CTkButton(CTk,
+                                     text=my_button[i],
+                                     command=my_button[i+1])
+            wxbtn.place(x=n, y=n+(m*k))
+            k+=1
+
 
 #Another Test code
 def geometry_wxTK(Tk):
@@ -61,38 +88,28 @@ def geometry_wxTK(Tk):
     return x + "x" + y
 def size_Tk(Tk):#size on screen
     Tk.maxsize(Tk.winfo_screenwidth(), Tk.winfo_screenheight())
-def dynamic_wx(CTk):
-    #set grid column configure
-    Grid.columnconfigure(CTk, index=0, weight=1)
-    Grid.columnconfigure(CTk, index=1, weight=1)
-    #set array
-    my_buttons=["button 1","button 2","button 3","button 4"]
-    # set title window
-    CTk.title("Dynamic CustomTkinter Window")
-    # variables
-    k = 1
-    m = 50
-    n =30
-    # set values dimensions
-    wxheight = (len(my_buttons) + k) * m  # height
-    wxwidth = wxheight + n  # width
-    # set dimension window
-    CTk.geometry(str(wxwidth) + "x" + str(wxheight + m))
-    # set minimum dimensions based on string array
-    CTk.minsize(wxwidth, wxheight)
-    # set maximum dimensions based on screen computer
-    CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
-    # Create buttons
-    k=0
 
-    for button in my_buttons:
-        #column #1
-        wxbtn = wx_ctk.CTkButton(CTk, text=button+" row "+str(k+1)+" column 1").grid(row=k, column=0, sticky="nsew")
-        # set grid column configure
-        Grid.rowconfigure(CTk, index=k, weight=1)
+def dynamic_wxTK():
+    print("Dynamic Tkinter Window")
+    #in development
+def dynamic_wxCTK():
+    print("Dynamic CustomTkinter Window")
+    #in development
+def btn_Exit_Tk(Tk):
+    print("Button Exit Tkinter")
+    def Close():
+        Tk.destroy()
+    # Button for closing
+    btn_exit_tk = Button(Tk, text="Exit", command=Close)
+    btn_exit_tk.pack()
+def btn_Exit_CTk(CTk):
+    print("Button Exit Custom Tkinter")
 
-        # column #2
-        wxbtn1 = wx_ctk.Button(CTk, text=button+" row "+str(k+1)+" column 2").grid(row=k, column=1, sticky="nsew")
-        # set grid column configure
-        Grid.rowconfigure(CTk, index=k, weight=1)
-        k+=1
+    def Close2():
+        CTk.destroy()
+
+    # Button for closing
+    btn_exit_ctk = CTkButton(CTk, text="Exit", command=Close2)
+    btn_exit_ctk.pack()
+def create_icon():
+    print("Creating Icon")

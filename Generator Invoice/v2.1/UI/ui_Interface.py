@@ -7,17 +7,17 @@ from .ui_functions import *
 def wxTk():  # WindowsForm on Tkinter
     print("Tkinter Window")
     wxWindow = Tk()
-    list_Tk = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
+    #array of strings and functions
+    list_Tk = ['Option 1',option_1, 'Option 2', option_2,'Option 3',option_3, 'Option 4', option_4]
     button_wxTk(list_Tk, wxWindow)
+    btn_Exit_Tk(wxWindow)
     wxWindow.mainloop()
 def wxCTk():  # WindowsForm on CTkinter
     print("CustomTkinter Window")
     wxWindow = CTk()
-    list_CTk = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
+    # array of strings and functions
+    list_CTk = ['Option 1',option_1, 'Option 2', option_2,'Option 3',option_3, 'Option 4', option_4]
     button_wxCTk(list_CTk,wxWindow)
+    btn_Exit_CTk(wxWindow)
     wxWindow.mainloop()
-def dynamic_wxCTK():
-    print("Dynamic CustomTkinter Window")
-    wxWindow = CTk()
-    dynamic_wx(wxWindow)
-    wxWindow.mainloop()
+

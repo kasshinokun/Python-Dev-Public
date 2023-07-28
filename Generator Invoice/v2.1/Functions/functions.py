@@ -1,4 +1,5 @@
 #Functions Subprogram
+from tkinter import messagebox
 def options_main(opt):
     if opt == 0:
         #before close message
@@ -31,3 +32,14 @@ def options_main(opt):
             print("\nRestarting Main...\n")
         return 0
 
+#options to graphic interface
+def showMsg():
+    messagebox.showinfo('Message', 'You clicked the Submit button!')
+def option_1():
+    messagebox.showinfo('Option 1', 'You clicked the Submit button 1!')
+def option_2():
+    messagebox.showinfo('Option 2', 'You clicked the Submit button 2!')
+def option_3():
+    messagebox.showinfo('Option 3', 'You clicked the Submit button 3!')
+def option_4():
+    messagebox.showinfo('Option 4', 'You clicked the Submit button 4!')
