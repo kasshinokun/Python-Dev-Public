@@ -1,8 +1,13 @@
 # Graphic Interface Subprogram
-
-from customtkinter import *
-from tkinter import *
+#Define and declare library 
+import customtkinter as wx_ctk
+import tkinter as wx_tk
 import sys
+
+#Set import from library 
+from wx_ctk import *
+from wx_tk import *
+
 
 #Create buttons and set window based on string array
 def button_wxTk(my_button,Tk):
@@ -23,7 +28,7 @@ def button_wxTk(my_button,Tk):
     Tk.maxsize(Tk.winfo_screenwidth(), Tk.winfo_screenheight())
     # Create buttons
     for button in my_button:
-        wxbtn=Button(Tk,text=button).place(x=m, y=m*k)
+        wxbtn=wx_tk.Button(Tk,text=button).place(x=m, y=m*k)
         k+=1
 #Create buttons and set window based on string array
 def button_wxCTk(my_button,CTk):
@@ -44,7 +49,7 @@ def button_wxCTk(my_button,CTk):
     CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
     #Create buttons
     for button in my_button:
-        wxbtn=Button(CTk,text=button).place(x=m, y=m*k)
+        wxbtn=wx_ctk.CTkButton(CTk,text=button).place(x=m, y=m*k)
         k+=1
 
 #Another Test code
@@ -57,7 +62,7 @@ def geometry_wxTK(Tk):
 def size_Tk(Tk):#size on screen
     Tk.maxsize(Tk.winfo_screenwidth(), Tk.winfo_screenheight())
 def dynamic_wx(CTk):
-    #set gri column configure
+    #set grid column configure
     Grid.columnconfigure(CTk, index=0, weight=1)
     Grid.columnconfigure(CTk, index=1, weight=1)
     #set array
@@ -82,12 +87,12 @@ def dynamic_wx(CTk):
 
     for button in my_buttons:
         #column #1
-        wxbtn = Button(CTk, text=button+" row "+str(k+1)+" column 1").grid(row=k, column=0, sticky="nsew")
-        # set gri column configure
+        wxbtn = wx_ctk.CTkButton(CTk, text=button+" row "+str(k+1)+" column 1").grid(row=k, column=0, sticky="nsew")
+        # set grid column configure
         Grid.rowconfigure(CTk, index=k, weight=1)
 
         # column #2
-        wxbtn1 = Button(CTk, text=button+" row "+str(k+1)+" column 2").grid(row=k, column=1, sticky="nsew")
-        # set gri column configure
+        wxbtn1 = wx_ctk.Button(CTk, text=button+" row "+str(k+1)+" column 2").grid(row=k, column=1, sticky="nsew")
+        # set grid column configure
         Grid.rowconfigure(CTk, index=k, weight=1)
         k+=1
