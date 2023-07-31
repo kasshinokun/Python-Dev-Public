@@ -27,10 +27,9 @@ def pdf_viewer():
          pdf_file= PyPDF2.PdfFileReader(file)
          #Select a Page to read
          page= pdf_file.getPage(0)
-         #Get the content of the Page
-         content=page.extractText()
-         #Add the content to TextBox
-         text.insert(1.0,content)
+         #Open PDF file
+
+
 
    #Define function to Quit the window
    def quit_app():
@@ -46,4 +45,4 @@ def pdf_viewer():
    file_menu.add_command(label="Quit",command=quit_app)
    win.mainloop()
 #call function 
-pdf_viewer()
+#pdf_viewer()

@@ -101,7 +101,7 @@ def btn_Exit_Tk(Tk):
         Tk.destroy()
     # Button for closing
     btn_exit_tk = Button(Tk, text="Exit", command=Close)
-    btn_exit_tk.pack()
+    btn_exit_tk.place(x=20, y=300)
 def btn_Exit_CTk(CTk):
     print("Button Exit Custom Tkinter")
 
@@ -110,6 +110,6 @@ def btn_Exit_CTk(CTk):
 
     # Button for closing
     btn_exit_ctk = CTkButton(CTk, text="Exit", command=Close2)
-    btn_exit_ctk.pack()
+    btn_exit_ctk.place(x=20,y=220)
 def create_icon():
     print("Creating Icon")

@@ -79,8 +79,11 @@ class MainWindow(Frame):
 
         window.mainloop()
 
-
-if __name__ == '__main__':
+def start_wx():
     mainWindow = MainWindow()
-    mainWindow.mainloop() 
-#test_class_parent_child()# call test class 
+    mainWindow.mainloop()
+
+def start_wx_2():
+    if __name__ == '__main__':
+        mainWindow = MainWindow()
+        mainWindow.mainloop()
