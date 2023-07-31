@@ -1,11 +1,19 @@
-#Code-base developed by:
+#Generate_PDF Code-base developed by:
 #https://medium.com/@asttrodev/tutorial-gerando-pdf-simples-com-reportlab-e-python-6b67e3692bef
+
+#Extract_PDF Code-base developed by Geeks for Geeks 
+#In future, I will create my version(objective of this: add knowledge)
 
 #Importing canvas from reportlab library 
 from reportlab.pdfgen import canvas
 
+
+#declaring function
+def extract_PDF():
+
+    
 #declaring function 
-def GeneratePDF(list_Names):
+def generate_PDF(list_Names):
     try:
 
 #With canvas.Canvas(archive.pdf) 
