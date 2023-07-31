@@ -50,5 +50,5 @@ list_Names = {'Rafaela': '19', 'Jose': '15', 'Maria': '22','Eduardo':'24'}
 #Call function GeneratePDF(list_Names) passing variable list_Names as argument;
 GeneratePDF(list_Names)
 
-def pdf_viewer(archive.pdf):
+def pdf_viewer(archive):
      print("Opening PDF")

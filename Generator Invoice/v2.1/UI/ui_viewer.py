@@ -46,4 +46,4 @@ def pdf_viewer():
    file_menu.add_command(label="Quit",command=quit_app)
    win.mainloop()
 #call function 
-def pdf_viewer()
+pdf_viewer()
