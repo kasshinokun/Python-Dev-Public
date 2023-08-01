@@ -2,7 +2,7 @@
 from customtkinter import *
 from tkinter import *
 from .ui_functions import *
-from .ui_viewer import *
+from .ui_wx_PDF import *
 from .ui_test import *
 
 #Create Windows:
