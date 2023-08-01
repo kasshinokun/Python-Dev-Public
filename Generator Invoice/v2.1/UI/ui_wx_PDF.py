@@ -1,16 +1,26 @@
+#Import the required Libraries
+import PyPDF2
+import tkinter
+import customtkinter
+
+#Importing canvas from reportlab library
+from reportlab.pdfgen import canvas
+
+#Import required items from Libraries
+from tkinter import *
+from customtkinter import *
+from tkinter import filedialog
+
+
 #My adaptations from creating_viewing_pdf.py
+#Declaration myClass #1
+
+#Declaration myClass #2
+
+#Declaration myClass #3
+
+#Declaration myClass #Main
+
+#Call Class Main
 
 
-
-
-def wx_generate_PDF():
-    print("\nIn development and adaptation in progress")
-def wx_extract_PDF():
-    print("\nIn development and adaptation in progress")
-def wx_view_PDF():
-    print("\nIn development and adaptation in progress")
-
-#call functions
-wx_generate_PDF()#test code #1
-wx_extract_PDF()#test code #2
-wx_view_PDF()#test code #3

@@ -66,8 +66,6 @@ def button_wxCTk(my_button,CTk):
 
     # set maximum dimensions based on screen computer
     CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
-    #array of functions
-
     #Create buttons
     k=0
     for i in range(len(my_button)):
