@@ -58,8 +58,8 @@ def min_CTk(CTk):#max size on screen
 def max_CTk(CTk):#max size on screen
     CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
 
-#class wxF(ctk.CTkFrame):
-class wx(ctk.CTk):#Main Class
+#class WxF(ctk.CTkFrame):
+class Wx(ctk.CTk):#Main Class
     def __init__(self):
         super().__init__()
         #set class based on array
@@ -76,5 +76,5 @@ class wx(ctk.CTk):#Main Class
 
         print("Window on screen")
 def start():#call main class based on variable
-    app=wx()
+    app=Wx()
     app.mainloop()
