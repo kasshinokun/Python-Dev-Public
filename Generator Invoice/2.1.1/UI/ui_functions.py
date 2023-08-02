@@ -3,6 +3,7 @@ import sys
 import PyPDF2
 import customtkinter as ctk
 
+import UI
 from Functions import *
 from tkinter import *
 
@@ -11,11 +12,12 @@ import tkinter as tk
 from tkinter import ttk
 
 
+
 #Create buttons and set window based on string array
-def button_wxCTk(my_button,CTk):
+def button_wxCTk(CTk,wxTitle,my_button):
 
     # set title window
-    CTk.title("CustomTkinter Window")
+    CTk.title(wxTitle)
 
     # variables
     m=50
@@ -31,7 +33,7 @@ def button_wxCTk(my_button,CTk):
     CTk.minsize(wxwidth, wxheight)
 
     # set maximum dimensions based on screen computer
-    max_CTk(CTk)
+    UI.max_CTk(CTk)
     #Create buttons
     k=0
     for i in range(len(my_button)):
@@ -42,39 +44,29 @@ def button_wxCTk(my_button,CTk):
             wxbtn.place(x=n, y=n+(m*k))
             k+=1
 
+    print(wxTitle+" on screen")
 
-
-def teste_ux():#Test Code 
+def teste_ux():#Test Code
     print("Interface Functions")
-def g_CTK(CTk):#to specific dimension
-#set dimensions based on screen computer
-    # set Height x Width
-    CTk.geometry("400x200")
-    #Set minimum and maximum dimensions
-    CTk.minsize(CTk.winfo_width(),CTk.winfo_heigth())
-    max_CTk(CTk)#Call function to set
-def min_CTk(CTk):#max size on screen
-    CTk.minsize(CTk.winfo_width(), CTk.winfo_height())
-def max_CTk(CTk):#max size on screen
-    CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
 
-#class WxF(ctk.CTkFrame):
-class Wx(ctk.CTk):#Main Class
+class Wx(ctk.CTk):#Window Class
+
     def __init__(self):
         super().__init__()
         #set class based on array
-        list_CTk = ['Option 1',
-                    option_1,
-                    'Option 2',
-                    option_2,
-                    'Option 3',
-                    option_3,
-                    'Option 4',
-                    option_4]
 
-        button_wxCTk(list_CTk, self)#call function
-
-        print("Window on screen")
+        print("Starting")
 def start():#call main class based on variable
-    app=Wx()
+    app=Wx()#Instantiate the window
+    #array to set buttons
+    list_CTk = ['Generate PDF',
+                UI.test_wx,
+                'View PDF',
+                option_2,
+                'Option 3',
+                option_3,
+                'Option 4',
+                option_4]
+    wx_t="Main CTk Window" #title of window
+    button_wxCTk(app,wx_t,list_CTk)  # call function
     app.mainloop()
