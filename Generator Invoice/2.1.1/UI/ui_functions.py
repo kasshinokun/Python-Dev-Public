@@ -42,6 +42,7 @@ def button_wxCTk(CTk,wxTitle,my_button):
                                      text=my_button[i],
                                      command=my_button[i+1])
             wxbtn.place(x=n, y=n+(m*k))
+            #wxbtn.pack(side=TOP;anchor=W)#test code
             k+=1
 
     print(wxTitle+" on screen")
