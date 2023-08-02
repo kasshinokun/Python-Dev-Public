@@ -15,6 +15,6 @@ def start_wx():#test code
     UI.teste_ui()#Call Interface
     UI.teste_ux()#Call Interface Functions
     Functions.option_1()#Call Function
-
+    UI.start()#Call Window
 
 start_wx()#call interface
