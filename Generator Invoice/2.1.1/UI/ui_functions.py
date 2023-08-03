@@ -41,12 +41,14 @@ def button_wxCTk(CTk,wxTitle,my_button):
             wxbtn = ctk.CTkButton(CTk,
                                      text=my_button[i],
                                      command=my_button[i+1])
-            wxbtn.place(x=n, y=n+(m*k))
-            #wxbtn.pack(side=TOP;anchor=W)#test code
+            wxbtn.place(x=n, y=n+(m*k))#Default setting button 
+            #Dynamic size button test
+            #wxbtn.pack(side='TOP';anchor='W')#test code
+            #wxbtn.pack(side='top',  padx=5,  pady=5,  expand=True, anchor='w')
             k+=1
 
     print(wxTitle+" on screen")
-
+    #self.resizable(True, True) #Dynamic size window test
 def teste_ux():#Test Code
     print("Interface Functions")
 
