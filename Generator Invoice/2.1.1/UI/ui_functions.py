@@ -35,22 +35,25 @@ def button_wxCTk(CTk,wxTitle,my_button):
     # set maximum dimensions based on screen computer
     UI.max_CTk(CTk)
     #Create buttons
-    k=0
+    #k=0 #variable to button in default setting size
     for i in range(len(my_button)):
         if i%2==0:
             wxbtn = ctk.CTkButton(CTk,
                                      text=my_button[i],
+                                     height=20,
                                      command=my_button[i+1])
-            wxbtn.place(x=n, y=n+(m*k))#Default setting button 
+            #wxbtn.place(x=n, y=n+(m*k))#button in default setting size
             #Dynamic size button test
-            #wxbtn.pack(side='TOP';anchor='W')#test code
-            #wxbtn.pack(side='top',  padx=5,  pady=5,  expand=True, anchor='w')
-            k+=1
+            wxbtn.pack(side='top',  padx=20,pady=5, anchor='w')#left justified
+            #k+=1 #Increment to button in default setting size
 
     print(wxTitle+" on screen")
-    #self.resizable(True, True) #Dynamic size window test
+    CTk.resizable(True, True) #Dynamic size window ===> (true=(resizable height),true=(resizable width))
+
 def teste_ux():#Test Code
     print("Interface Functions")
+#class Wx_Frame():#Frame Class
+
 
 class Wx(ctk.CTk):#Window Class
 
@@ -58,15 +61,15 @@ class Wx(ctk.CTk):#Window Class
         super().__init__()
         #set class based on array
 
-        print("Starting")
+        #print("Starting")
 def start():#call main class based on variable
     app=Wx()#Instantiate the window
     #array to set buttons
     list_CTk = ['Generate PDF',
                 UI.test_wx,
                 'View PDF',
-                option_2,
-                'Option 3',
+                lambda :options_main(2),
+                'Open Frame',
                 option_3,
                 'Option 4',
                 option_4]
