@@ -1,17 +1,17 @@
 # Adaptation from:
 # https://www.pythontutorial.net/tkinter/tkinter-toplevel/
-import customtkinter
+
 import os
 import sys
 import PyPDF2
 import customtkinter as ctk
 import tkinter as tk
-
 from Functions import *
-from UI import *
 from tkinter import *
 from tkinter import ttk
 
+#In use
+from UI import *
 
 def g_CTK(CTk):  # to specific dimension
     # set dimensions based on screen computer
@@ -29,9 +29,17 @@ def min_CTk(CTk):  # max size on screen
 def max_CTk(CTk):  # max size on screen
     CTk.maxsize(CTk.winfo_screenwidth(), CTk.winfo_screenheight())
 
+def identify(obj):#identify type object
+    # Need correction, show error
+    if obj == ctk.CTk:
+        print("It's a Window")
+    elif obj == ctk.CTkFrame:
+        print("It's a Frame")
+    else:
+        print("This is unknow for me")
 
 def btn_Exit(CTk):
-    wxbtn = ctk.CTkButton(CTk, text='Close', command=option_1)
+    wxbtn = ctk.CTkButton(CTk, text='Close',command=CTk.destroy)
     # Dynamic size button test
     wxbtn.pack(side='bottom', padx=20, pady=5, anchor='w')  # left justified
 
@@ -41,15 +49,25 @@ class WxF(ctk.CTkToplevel):
         super().__init__(parent)
         # array to set buttons
         list_CTk = ['Option 1',
-                    option_1,
-                    'Option 2',
-                    option_2,
-                    'Option 3',
-                    option_3,
-                    'Option 4',
-                    option_4]
-        wx_t = "Child CTk Window"  # title of window
-        button_wxCTk(self, wx_t, list_CTk)  # call function
+                lambda :options_main(1),
+                'Option 2',
+                lambda :options_main(2),
+                'Option 3',
+                lambda :options_main(3),
+                'Option 4',
+                lambda :options_main(4)]
+        self.title("Child CTk Window")  # title of window
+        for i in range(len(list_CTk)):
+            if i % 2 == 0:
+                wxbtn = ctk.CTkButton(self,
+                                      text=list_CTk[i],
+                                      height=20,
+                                      command=list_CTk[i + 1])
+                # Dynamic size button test
+                wxbtn.pack(side='top', padx=20, pady=5, anchor='w')  # left justified
+        wxbtn2 = ctk.CTkButton(self, text='Return', command=self.destroy)
+        # Dynamic size button test
+        wxbtn2.pack(side='bottom', padx=20, pady=5, anchor='w')  # left justified
 
 
 class Main_wx(ctk.CTk):
@@ -64,26 +82,12 @@ class Main_wx(ctk.CTk):
                       command=self.start_wx).pack(side='top', padx=20, pady=5, anchor='w')  # left justified
         ctk.CTkButton(self,
                       text='Test Type',
-                      command=lambda: identify(ctk.CTk)).pack(side='top', padx=20, pady=5, anchor='w')  # left justified
+                      command=lambda: identify(self)).pack(side='top', padx=20, pady=5, anchor='w')  # left justified
     def start_wx(self):
         wx_master = WxF(self)
         wx_master.grab_set()
-
-
 def test_wx():
     wx = Main_wx()
-    btn_Exit(wx)
+    #btn_Exit(wx) #Founded error
     wx.mainloop()
-
-
-def identify(obj):#identify type object
-    # Need correction, show error
-    if obj == ctk.CTk:
-        print("It's a Window")
-    elif obj == ctk.CTkFrame:
-        print("It's a Frame")
-    else:
-        print("This is unknow for me")
-
-
-
+#test_wx() #test code

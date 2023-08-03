@@ -1,17 +1,14 @@
 import os
 import sys
 import PyPDF2
-import customtkinter as ctk
-
-import UI
+import tkinter as tk
+from tkinter import ttk
 from Functions import *
 from tkinter import *
 
-
-import tkinter as tk
-from tkinter import ttk
-
-
+#In use
+import customtkinter as ctk
+import UI
 
 #Create buttons and set window based on string array
 def button_wxCTk(CTk,wxTitle,my_button):
@@ -49,9 +46,12 @@ def button_wxCTk(CTk,wxTitle,my_button):
 
     print(wxTitle+" on screen")
     CTk.resizable(True, True) #Dynamic size window ===> (true=(resizable height),true=(resizable width))
-
-def teste_ux():#Test Code
-    print("Interface Functions")
+def wx_Close(CTk):
+    wxbtn = ctk.CTkButton(CTk, text='Close',command=CTk.destroy)
+    # Dynamic size button test
+    wxbtn.pack(side='bottom', padx=20, pady=5, anchor='w')  # left justified
+def teste_ui():
+    print("Interface")
 #class Wx_Frame():#Frame Class
 
 
@@ -62,17 +62,4 @@ class Wx(ctk.CTk):#Window Class
         #set class based on array
 
         #print("Starting")
-def start():#call main class based on variable
-    app=Wx()#Instantiate the window
-    #array to set buttons
-    list_CTk = ['Generate PDF',
-                UI.test_wx,
-                'View PDF',
-                lambda :options_main(2),
-                'Open Frame',
-                option_3,
-                'Option 4',
-                option_4]
-    wx_t="Main CTk Window" #title of window
-    button_wxCTk(app,wx_t,list_CTk)  # call function
-    app.mainloop()
+
