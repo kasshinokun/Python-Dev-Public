@@ -1,17 +1,8 @@
 # Adaptation from:
 # https://www.pythontutorial.net/tkinter/tkinter-toplevel/
 
-import os
-import sys
-import PyPDF2
-import customtkinter as ctk
-import tkinter as tk
-from Functions import *
-from tkinter import *
-from tkinter import ttk
-
 #In use
-from UI import *
+from test_code.UI import *
 
 def g_CTK(CTk):  # to specific dimension
     # set dimensions based on screen computer
@@ -22,7 +13,7 @@ def g_CTK(CTk):  # to specific dimension
     max_CTk(CTk)  # Call function to set
 
 
-def min_CTk(CTk):  # max size on screen
+def min_CTk(CTk):  # min size on screen
     CTk.minsize(int(CTk.winfo_width()), int(CTk.winfo_height()))
 
 

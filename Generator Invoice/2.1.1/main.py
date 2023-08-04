@@ -1,5 +1,5 @@
 #import from folder project
-import UI
+from test_code import UI
 
 UI.start()#Call Window
 

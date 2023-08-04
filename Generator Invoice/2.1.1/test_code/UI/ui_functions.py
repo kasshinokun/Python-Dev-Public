@@ -1,14 +1,7 @@
-import os
-import sys
-import PyPDF2
-import tkinter as tk
-from tkinter import ttk
-from Functions import *
-from tkinter import *
-
 #In use
 import customtkinter as ctk
-import UI
+from test_code import UI
+
 
 #Create buttons and set window based on string array
 def button_wxCTk(CTk,wxTitle,my_button):
