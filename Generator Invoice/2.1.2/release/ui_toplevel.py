@@ -17,12 +17,21 @@ def btn_close(CTkToplevel):#to close windows
     ctk.CTkButton(CTkToplevel,
                   text='Close',
                   command=CTkToplevel.destroy).pack(side='bottom', padx=20, pady=5, anchor='w')
+#to setting size outside frame class
+def g_frame(CTkFrame):#setting height and width frame 
+    #CTkFrame.config(height=100, width=150, expand=True)#test code
+     CTkFrame.config(height=100)#test code
+     CTkFrame.config(width=150)#test code    
 # Frame Class
 class MainFrame(ctk.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
         #Set size
-        #self=(self,width=150,height=100)#test code
+        #setting dimensions frame
+        #self.config(height=100, width=150, expand=True)#test code
+        #g_frame(self)#outside class 
+        self.config(height=100)#test code
+        self.config(width=150)#test code
         # show the frame on the container
         self.pack(side='top',  padx=20,pady=5, anchor='w')#left justified
 
