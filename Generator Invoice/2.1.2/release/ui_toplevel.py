@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import ttk
 
 # Specific import from libraries
-
+#from customtkinter import *
 # Specific import from folders
 from release import functions
 
@@ -17,23 +17,14 @@ def btn_close(CTkToplevel):#to close windows
     ctk.CTkButton(CTkToplevel,
                   text='Close',
                   command=CTkToplevel.destroy).pack(side='bottom', padx=20, pady=5, anchor='w')
-#to setting size outside frame class
-def g_frame(CTkFrame):#setting height and width frame 
-    #CTkFrame.config(height=100, width=150, expand=True)#test code
-     CTkFrame.config(height=100)#test code
-     CTkFrame.config(width=150)#test code    
-# Frame Class
-class MainFrame(ctk.CTkFrame):
+#to setting size outside object class
+def p_wx(CTkToplevel):
+    CTkToplevel.pack_configure(side='top',padx=20, pady=5, fill='both', anchor='w', expand=True)
+#Frame Class
+class Wx_Frame(ctk.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
-        #Set size
-        #setting dimensions frame
-        #self.config(height=100, width=150, expand=True)#test code
-        #g_frame(self)#outside class 
-        self.config(height=100)#test code
-        self.config(width=150)#test code
-        # show the frame on the container
-        self.pack(side='top',  padx=20,pady=5, anchor='w')#left justified
+
 
 # Child Window Class
 class Wx_Child(ctk.CTkToplevel):
@@ -73,7 +64,10 @@ def wx_start():#Initiate a program
     functions.default_CTk(wx,wx_t)#setting default size and title
     btn_open(wx)#to open child window
     btn_close(wx)#to close window
-    frame=MainFrame(wx)
+    wx_frame = Wx_Frame(wx)
+    #set dynamic size frame
+    p_wx(wx_frame)
+
     wx.mainloop()#to stay on screen
 
 wx_start()#Call start function
