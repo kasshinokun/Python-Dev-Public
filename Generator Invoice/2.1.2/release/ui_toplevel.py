@@ -56,6 +56,22 @@ def btn_open(CTkToplevel):#to open windows
     ctk.CTkButton(CTkToplevel,
                   text='Open default child window',
                   command=lambda: wx_w(CTkToplevel)).pack(side='top', padx=20, pady=5, anchor='w')
+
+#test frame with predefined functions
+def wx_wx():#some details will added on future
+    print("start a frame")
+    #instanciate the objects:
+    
+    #setting frame
+    
+    #labels
+    
+    #entries
+    
+    #buttons
+    
+    #feedback on console(terminal/system prompt)
+
 #Initial function
 def wx_start():#Initiate a program
     print("Starting")#Feedback
