@@ -6,6 +6,6 @@ def main_start():#main function of program
     print("\n3)Citizen")#program options
     print("\n4)Correction")#program options
     print("\n5)Send Invoice")#program options
-    print("\n6)Send Recibo")#program options
+    print("\n6)Send Invoice")#program options
     print("\n\n0)Exit")#condition to exit
     print("\n\nPlease choose a option:")#choice user request
